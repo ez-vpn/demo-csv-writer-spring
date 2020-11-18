@@ -48,7 +48,6 @@ public class CsvWriter {
             CSVPrinter csvPrinter = new CSVPrinter(fileWriter, CSVFormat.DEFAULT);
             csvPrinter.printRecord(protocol, measurement, jsonNode.get("value").asText(), jsonNode.get("ts").asText());
             csvPrinter.flush();
-            fileWriter.close();
         } catch (JsonProcessingException e) {
             LOG.error("Cannot parse JON payload", e);
         } catch (IOException e) {
